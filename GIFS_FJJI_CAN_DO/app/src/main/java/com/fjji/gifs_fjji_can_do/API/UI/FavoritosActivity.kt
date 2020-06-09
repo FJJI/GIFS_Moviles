@@ -11,13 +11,14 @@ import com.fjji.gifs_fjji_can_do.API.UI.MapActivity.Companion.looking
 import com.fjji.gifs_fjji_can_do.API.model.Database
 import com.fjji.gifs_fjji_can_do.API.model.GifDB
 import com.fjji.gifs_fjji_can_do.API.model.GifDBAdapter
-import com.fjji.gifs_fjji_can_do.API.UI.MenuActivity.Companion.database
+import com.fjji.gifs_fjji_can_do.API.model.GifDao
 import com.fjji.gifs_fjji_can_do.R
 import kotlinx.android.synthetic.main.activity_favoritos.*
 
 class FavoritosActivity : AppCompatActivity(), GifDBAdapter.OnDeleteClickListener {
 
     val adapter = GifDBAdapter(this)
+    private lateinit var database: GifDao
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

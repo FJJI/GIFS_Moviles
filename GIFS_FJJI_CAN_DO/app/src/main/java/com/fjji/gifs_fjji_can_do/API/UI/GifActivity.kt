@@ -1,9 +1,12 @@
 package com.fjji.gifs_fjji_can_do.API.UI
 
+import android.Manifest
+import android.content.pm.PackageManager
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.core.app.ActivityCompat
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.fjji.gifs_fjji_can_do.API.model.Gif
@@ -32,6 +35,7 @@ class GifActivity : AppCompatActivity(),
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gif)
+        locationData = LocationUtil(this)
         try{
             gifsData = intent.getSerializableExtra(GIPHY) as ArrayList<Gif>
         }catch (e:Exception){
@@ -58,15 +62,39 @@ class GifActivity : AppCompatActivity(),
         println("Im the star")
         var longitude:Double = 0.0
         var latitude:Double = 0.0
-        locationData.observe(this, Observer {
+        when {isPermissionsGranted() -> locationData.observe(this, Observer {
             println("${it.latitude} , ${it.longitude}")
             longitude = it.longitude
             latitude = it.latitude
-        })
-        val gif = GifDB(item.id, item.rating, item.title!!, item.images.original.url) //Mejor que forzar un optional pero aum asi hay mejores formas
+            })
+        }
+        val gif = GifDB(item.id, item.rating, item.title!!, item.images.original.url, longitude, latitude) //Mejor que forzar un optional pero aum asi hay mejores formas
         view.iv_star_gif_cell.setImageResource(R.drawable.full_star_50)
         AsyncTask.execute{
             database.insert(gif)
         }
+    }
+
+    private fun isPermissionsGranted() =
+        ActivityCompat.checkSelfPermission(
+            this,
+            Manifest.permission.ACCESS_FINE_LOCATION
+        ) == PackageManager.PERMISSION_GRANTED &&
+                ActivityCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.ACCESS_COARSE_LOCATION
+                ) == PackageManager.PERMISSION_GRANTED
+
+    private fun shouldShowRequestPermissionRationale() =
+        ActivityCompat.shouldShowRequestPermissionRationale(
+            this,
+            Manifest.permission.ACCESS_FINE_LOCATION
+        ) && ActivityCompat.shouldShowRequestPermissionRationale(
+            this,
+            Manifest.permission.ACCESS_COARSE_LOCATION
+        )
+
+    companion object {
+        var LOCATION_PERMISSION = 100
     }
 }

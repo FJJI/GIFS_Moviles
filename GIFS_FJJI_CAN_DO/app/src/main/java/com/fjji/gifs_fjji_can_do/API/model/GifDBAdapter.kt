@@ -13,6 +13,7 @@ class GifDBAdapter( val delClickListener: OnDeleteClickListener) : RecyclerView.
 
     private var data = listOf<GifDB>()
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.fav_cell, parent, false)

@@ -29,17 +29,17 @@ interface GifDao {
 data class GifDB(
     @PrimaryKey
     @ColumnInfo(name = ID)
-    var id: String,
+    val id: String,
     @ColumnInfo(name = RATING)
-    var rating: String? = null,
+    val rating: String,
     @ColumnInfo(name = TITLE)
-    var title: String? = null,
+    val title: String,
     @ColumnInfo(name = URL)
-    var url: String? = null,
+    val url: String,
     @ColumnInfo(name = LATITUDE)
-    var latitude: Double? = null,
-    @ColumnInfo(name = LONG)
-    var long: Double? = null
+    val latitude: Double,
+    @ColumnInfo(name = LONGITUDE)
+    val longitude: Double
 ) {
     companion object {
         const val TABLE_NAME = "gif"
@@ -48,7 +48,7 @@ data class GifDB(
         const val RATING = "rating"
         const val TITLE = "title"
         const val LATITUDE = "latitude"
-        const val LONG = "long"
+        const val LONGITUDE = "long"
     }
 
 }
