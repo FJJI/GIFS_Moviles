@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "34855327010",
+    "firebase_url": "https://gifs-fjji.firebaseio.com",
+    "project_id": "gifs-fjji",
+    "storage_bucket": "gifs-fjji.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:34855327010:android:1df31ec61f41260db4c17b",
+        "android_client_info": {
+          "package_name": "com.abs.clase12"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "34855327010-rb9e36pr7n10ed8649vhb1r0933svsnl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2AqFCEsPeKzZZi_dTgC6GQQcgm_mb9AY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "34855327010-rb9e36pr7n10ed8649vhb1r0933svsnl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:34855327010:android:62bb47cdcb2a153bb4c17b",
+        "android_client_info": {
+          "package_name": "com.fjji.gifs_fjji_can_do"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "34855327010-hkcfakf9pte7nlsavsvju7h36njenrei.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fjji.gifs_fjji_can_do",
+            "certificate_hash": "0c37ff227eb8a37eca2184c28768ee52bc382a3c"
+          }
+        },
+        {
+          "client_id": "34855327010-rb9e36pr7n10ed8649vhb1r0933svsnl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2AqFCEsPeKzZZi_dTgC6GQQcgm_mb9AY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "34855327010-rb9e36pr7n10ed8649vhb1r0933svsnl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
